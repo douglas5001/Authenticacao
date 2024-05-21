@@ -41,6 +41,12 @@ def admin_required(fn):
         else:
             return fn(*args, **kwargs)
     return wrapper
+
+def listar_usuario_email(email):
+    return UsuarioModel.Usuario.query.filter_by(email=email).first()
+
+def listar_usuario_id(id):
+    return UsuarioModel.Usuario.query.filter_by(id=id).first()
 ```
 
 Schema
